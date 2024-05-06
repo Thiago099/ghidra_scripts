@@ -8,7 +8,7 @@ All scripts that interact with the address library will ask for a game version; 
 
 This script will ask you for an address library ID, it will bookmark the address of that id
 
-### Hook All References to this function.py
+### Hook All References to this address.py
 
 This script will print on the console the address library IDs of the function it is in, and the offset, for all references to the selected address. If the selected address is a reference, it will do that for the original address
 
