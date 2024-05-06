@@ -49,4 +49,4 @@ it needs to follow this naming convetion
 
 offsets-`<game-version>`.txt
 
-Finally, you can finally run the ipynb file to update the database used by these scripts
+Finally, you can finally run the only cell on the ipynb file to update the database used by these scripts
