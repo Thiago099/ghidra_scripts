@@ -1,5 +1,3 @@
-## Address Library scripts or Ghidra
-
 ### General
 
 All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable
