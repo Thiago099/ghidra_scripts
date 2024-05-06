@@ -1,4 +1,3 @@
-
 ## Address Library scripts or Ghidra
 
 ### General
@@ -11,11 +10,11 @@ This script will ask you for an address library ID, it will bookmark the address
 
 ### Hook All References to this function.py
 
-This script will print on the console the address library IDs and the offset in the function for all references to the selected address. If the selected address is a reference, it will do that for the original address
+This script will print on the console the address library IDs and the offset in the function for all references to the selected address. If the selected address is a reference, it will do that for the original address instead
 
 ### Hook This Reference.py
 
-This script will display the current function address in the address library and its offset for the function it is in. If the address is the function itself, it will work, but the offset will be 0x0
+If the selected address is in a function, it will display the address of this function on the Address Library and the offset of where this address is in that function
 
 ### Using a specific version of skyrim:
 
