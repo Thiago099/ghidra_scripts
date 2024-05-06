@@ -18,7 +18,7 @@ If the selected address is in a function, it will display the address of this fu
 
 ### Using a specific version of skyrim:
 
-You can generate a dump of your specific version of skyrim by adding this code to any Skse plugin. You can get the header file [here](https://www.nexusmods.com/skyrimspecialedition/mods/32444?tab=files)
+You can generate a dump of your specific version of skyrim by adding this code to any SKSE plugin. You can get the header file [here](https://www.nexusmods.com/skyrimspecialedition/mods/32444?tab=files)
 
 ```c++
 
