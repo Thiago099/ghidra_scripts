@@ -12,7 +12,7 @@ This script will print on the console the address library IDs of the function it
 
 ### Hook This Reference.py
 
-If the selected address is in a function, it will display the address of this function on the Address Library and the offset of where this address is in that function
+If the selected address is in a function, it will display the id of this function on the Address Library and the offset of where this address is in that function
 
 ### Using a specific version of skyrim:
 
