@@ -15,9 +15,15 @@ versions = list(data.keys())
 
 
 def MemoryToAddressLibrary(version, input):
+    if(input not in data[version]["skyrim-to-address"]):
+        print("address "+input+" not found on address library")
+        return 0
     return data[version]["skyrim-to-address"][input]
 
 def AddressLibraryToMemory(version, input):
+    if(str(input) not in data[version]["address-to-skyrim"]):
+        print("address "+str(input)+" not found on address library")
+        return 0
     raw_address = int(data[version]["address-to-skyrim"][str(input)],16)
     offset = 0x140000000
     return hex(offset+raw_address)
