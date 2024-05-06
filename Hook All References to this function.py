@@ -33,6 +33,8 @@ class MyScript(GhidraScript):
 				entryPoint = func.getEntryPoint()
 				offset = address.subtract(entryPoint)
 				library.PrintAddress(entryPoint, offset)
+			else:
+				print("address " + str(address) + " is not on a function")
 
 
 script = MyScript()
