@@ -10,7 +10,7 @@ This script will ask you for an address library ID, it will bookmark the address
 
 ### Hook All References to this function.py
 
-This script will print on the console the address library IDs and the offset in the function for all references to the selected address. If the selected address is a reference, it will do that for the original address instead
+This script will print on the console the address library IDs of the function it is in, and the offset, for all references to the selected address. If the selected address is a reference, it will do that for the original address
 
 ### Hook This Reference.py
 
