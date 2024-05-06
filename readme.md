@@ -1,5 +1,3 @@
-## Address Library scripts or Ghidra
-
 ### General
 
 All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable
@@ -18,7 +16,7 @@ If the selected address is in a function, it will display the address of this fu
 
 ### Using a specific version of skyrim:
 
-You can generate a dump of your specific version of skyrim by adding this code to any Skse plugin. You can get the header file [here](https://www.nexusmods.com/skyrimspecialedition/mods/32444?tab=files)
+You can generate a dump of your specific version of skyrim by adding this code to any SKSE plugin. You can get the header file [here](https://www.nexusmods.com/skyrimspecialedition/mods/32444?tab=files)
 
 ```c++
 
@@ -49,4 +47,4 @@ it needs to follow this naming convetion
 
 offsets-`<game-version>`.txt
 
-Finally, you can finally run the ipynb file to update the database used by these scripts
+Finally, you can finally run the only cell on the ipynb file to update the database used by these scripts
