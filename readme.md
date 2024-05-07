@@ -41,7 +41,7 @@ return true;
 }
 ```
 
-After you do that, you can put the file you generated in the data folder of this project
+After you do that, you can put the file you generated (it will be on your skyrim root folder) in the data folder of this project
 
 it needs to follow this naming convetion
 
