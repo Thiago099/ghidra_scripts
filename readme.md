@@ -16,11 +16,11 @@ This script will ask you for an address library ID, it will bookmark the address
 
 ### Hook All References to this address.py
 
-This script will print on the console the address library IDs of the function it is in, and the offset, for all references to the selected address. If the selected address is a reference, it will do that for the original address
+This script will print on the console the address library IDs of the function it is in, and the offset, for all references to the selected address. If the selected address is a reference, it will do that for the original address instead
 
 ### Hook This Reference.py
 
-If the selected address is in a function, it will display the address of this function on the Address Library and the offset of where this address is in that function
+If the selected address is in a function, it will display the id of this function on the Address Library and the offset of where this address is in that function
 
 ### Using a specific version of skyrim:
 
@@ -49,7 +49,7 @@ return true;
 }
 ```
 
-After you do that, you can put the file you generated in the data folder of this project
+After you do that, you can put the file you generated (it will be on your skyrim root folder) in the data folder of this project
 
 it needs to follow this naming convetion
 
