@@ -8,7 +8,7 @@ This script will rename all known functions to the name, currently all of the RE
 
 ### GetAddressLibraryIds.py
 
-This script will return both the AE and SE address library IDs of the selected code unit; if it is on a function, it will do so for the original code unit, if they are on the database
+This script will return both the AE and SE address library IDs of the selected code unit; if they are on the database.
 
 ### Bookmark An Address.py
 
