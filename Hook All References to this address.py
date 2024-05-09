@@ -4,8 +4,6 @@
 #@menupath 
 #@toolbar 
 from ghidra.app.script import GhidraScript
-from ghidra.util.task import ConsoleTaskMonitor
-from ghidra.program.model.symbol import ReferenceManager
 
 from  _common import versions, AddressLibrary
 

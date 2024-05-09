@@ -2,6 +2,14 @@
 
 All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable
 
+### RenameAllKnownFunctions.py
+
+This script will rename all known functions to the name, currently all of the RELOCATION_ID calls in commonlib
+
+### GetAddressLibraryIds.py
+
+This script will return both the AE and SE address library IDs of the selected code unit; if it is on a function, it will do so for the original code unit, if they are on the database
+
 ### Bookmark An Address.py
 
 This script will ask you for an address library ID, it will bookmark the address of that id
@@ -45,6 +53,18 @@ After you do that, you can put the file you generated in the data folder of this
 
 it needs to follow this naming convetion
 
-offsets-`<game-version>`.txt
+offsets-`<ae-or-se>`-`<game-version>`.txt
 
-Finally, you can finally run the only cell on the ipynb file to update the database used by these scripts
+Finally, you can finally run the first cell on the ipynb file to update the database used by these scripts
+
+### Adding your own addresses to the database:
+
+you can add new lines to the known-addresses.txt in this format
+
+`<function-name>`;`<se-id>`;`<ae-id>`
+
+Example:
+
+Actor_AddSpell;37771;38716
+
+Then you can run the secund cell of the build.ipynb
