@@ -4,7 +4,7 @@ All scripts that interact with the address library will ask for a game version; 
 
 ### RenameAllKnownFunctions.py
 
-This script will rename all known functions to the name, currently all of the RELOCATION_ID calls in commonlib
+This script will rename all known functions, currently all of the RELOCATION_ID calls in commonlib
 
 ### GetAddressLibraryIds.py
 
