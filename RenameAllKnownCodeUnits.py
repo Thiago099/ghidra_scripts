@@ -30,19 +30,25 @@ class MyScript(GhidraScript):
                 return
             
             break
-
-        for id in library.GetAllIDS():
-            address = library.GetMemory(str(id))
-            if(address == "0"):
+        code_units_renamed = 0
+        for id in library.GetAllIds():
+            address = library.GetMemory(id)
+            if(address == "-1"):
                 continue
             program_address = currentProgram.getAddressFactory().getAddress(address)
             code_unit = currentProgram.getListing().getCodeUnitAt(program_address)
+            data = library.GetAddressData(id)
+            if(data == "-1"):
+                continue
             if(code_unit is not None):
-                 symbol_table.createLabel(program_address, library.GetIdName(id), SourceType.USER_DEFINED)
+                if("name" in data):
+                    code_units_renamed += 1
+                    symbol_table.createLabel(program_address, data["name"], SourceType.USER_DEFINED)
             else:
                 print("code unit not found at address "+address)
 
-        print("Done")
+            pass
+        print("Done, code units renamed "+str(code_units_renamed))
 
 script = MyScript()
 script.run()
