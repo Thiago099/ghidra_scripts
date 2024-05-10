@@ -1,14 +1,14 @@
 ### General
 For the scripts to work, the address library offsets must be in the database, if you are not using 1.6.1170.0 or 1.5.97.0 you will need to add them to the database [Here](#adding-your-skyrim-version-to-the-database) is how you do it 
 
-### GLOBAL_RenameAllKnownFunctions.py
+### GLOBAL Rename All Known Functions.py
 
 This script will rename all known functions that are in the definition database
 You will be asked if you want to delete existing symbols. It is highly suggested that you say no; however, if you do so, functions that you have already renamed will not be renamed
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/051cbb55-2bd3-4688-b358-faeb0489781e)
 
-### GLOBAL_Bookmark An Address.py
+### GLOBAL Bookmark An Address.py
 
 This script will ask you for an address library ID, and it will bookmark the address of that ID
 
@@ -20,13 +20,13 @@ If you however provide the right id to your game version it only needs to be on 
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/819ae529-7c4d-405e-a03f-e60946c38ba2)
 
-### SELECTION_Get Info.py
+### SELECTION Get Info.py
 
 This script will print basic information about the selected address, if found on the database
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/b510a5b1-728e-43a2-b02c-367232509534)
 
-### SELECTION_GetAddressLibraryIds.py
+### SELECTION Get Address Library Ids.py
 
 This script will return both the AE and SE address library IDs of the selected code unit, if they are in the database.
 
@@ -34,14 +34,14 @@ Example of output
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/367148a6-fd27-4cde-81c6-043f54ceb682)
 
-### SELECTION_Hook All References to this address.py
+### SELECTION Hook All References to this address.py
 
 This script will print on the console the address library IDs of the function it is in, and the offset, for all references to the selected address. If the selected address is a reference, it will do that for the original address instead
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/3af400a3-889c-42b6-b511-282b6352811d)
 
 
-### SELECTION_Hook This Reference.py
+### SELECTION Hook This Reference.py
 
 If the selected address is in a function, it will display the id of this function on the Address Library and the offset of where this address is in that function
 
