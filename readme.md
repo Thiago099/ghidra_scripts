@@ -1,24 +1,41 @@
 ### General
 
-All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable
+All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable. If it is not on the list you will need to build the ids/address pair for your version, [Here](#using-a-specific-version-of-skyrim) is how you do it 
 
-### RenameAllKnownFunctions.py
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/3df63193-73c9-418a-ad59-80e1af03046e)
 
-This script will rename all known functions to the name, currently all of the RELOCATION_ID calls in commonlib
 
-### GetAddressLibraryIds.py
+### GLOBAL_RenameAllKnownFunctions.py
 
-This script will return both the AE and SE address library IDs of the selected code unit; if they are on the database.
+This script will rename all known functions in the database
 
-### Bookmark An Address.py
+You will be asked if you want to delete existing symbols. It is highly suggested that you say no; however, if you do so, functions that you have already renamed will not be renamed
 
-This script will ask you for an address library ID, it will bookmark the address of that id
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/051cbb55-2bd3-4688-b358-faeb0489781e)
 
-### Hook All References to this address.py
+### GLOBAL_Bookmark An Address.py
+
+This script will ask you for an address library ID, and it will bookmark the address of that ID
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/f5994d26-5ca6-4076-8b02-5cf197d3feec)
+
+You can use IDs from SE on AE for as long as they are in the database, you must answer this prompt correctly
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/819ae529-7c4d-405e-a03f-e60946c38ba2)
+
+### SELECTION_GetAddressLibraryIds.py
+
+This script will return both the AE and SE address library IDs of the selected code unit, if they are in the database.
+
+Example of output
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/367148a6-fd27-4cde-81c6-043f54ceb682)
+
+### SELECTION_Hook All References to this address.py
 
 This script will print on the console the address library IDs of the function it is in, and the offset, for all references to the selected address. If the selected address is a reference, it will do that for the original address instead
 
-### Hook This Reference.py
+### SELECTION_Hook This Reference.py
 
 If the selected address is in a function, it will display the id of this function on the Address Library and the offset of where this address is in that function
 
