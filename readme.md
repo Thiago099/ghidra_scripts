@@ -1,6 +1,6 @@
 ### General
 
-All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable. If it is not on the list you will need to build the ids/address pair for your version, [Here](#Using a specific version of skyrim:) is how you do it 
+All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable. If it is not on the list you will need to build the ids/address pair for your version, [Here](#using-a-specific-version-of-skyrim) is how you do it 
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/3df63193-73c9-418a-ad59-80e1af03046e)
 
