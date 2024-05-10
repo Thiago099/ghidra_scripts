@@ -23,7 +23,7 @@ If you however provide the right id to your game version it only needs to be on 
 
 ### SELECTION_Get Info.py
 
-This script will print basic information about the selected function
+This script will print basic information about the selected address, if found on the database
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/b510a5b1-728e-43a2-b02c-367232509534)
 
