@@ -14,7 +14,7 @@ This script will ask you for an address library ID, and it will bookmark the add
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/f5994d26-5ca6-4076-8b02-5cf197d3feec)
 
-You can use IDs from SE on AE for as long as they are in the database, you must answer this prompt correctly
+You can use IDs from SE on AE and vice versa for as long as they are in the database, you must answer this prompt correctly
 
 If you however provide the right id to your game version it only needs to be on the id database, instead of both the id and the match database
 
