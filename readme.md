@@ -1,9 +1,5 @@
 ### General
-
-All scripts that interact with the address library will ask for a game version; you should provide it with the correct one for your executable. If it is not on the list you will need to build the ids/address pair for your version, [Here](#using-a-specific-version-of-skyrim) is how you do it 
-
-![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/3df63193-73c9-418a-ad59-80e1af03046e)
-
+For the scripts to work, the address library offsets must be in the database, if you are not using 1.6.1170.0 or 1.5.97.0 you will need to add them to the database [Here](#using-a-specific-version-of-skyrim) is how you do it 
 
 ### GLOBAL_RenameAllKnownFunctions.py
 
@@ -21,6 +17,8 @@ This script will ask you for an address library ID, and it will bookmark the add
 
 You can use IDs from SE on AE for as long as they are in the database, you must answer this prompt correctly
 
+If you however provide the right id to your game version it only needs to be on the id database, instead of both the id and the match database
+
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/819ae529-7c4d-405e-a03f-e60946c38ba2)
 
 ### SELECTION_GetAddressLibraryIds.py
@@ -35,9 +33,14 @@ Example of output
 
 This script will print on the console the address library IDs of the function it is in, and the offset, for all references to the selected address. If the selected address is a reference, it will do that for the original address instead
 
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/3af400a3-889c-42b6-b511-282b6352811d)
+
+
 ### SELECTION_Hook This Reference.py
 
 If the selected address is in a function, it will display the id of this function on the Address Library and the offset of where this address is in that function
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/a5a5a13e-7d6b-4e56-aa40-9045cf934a65)
 
 ### Using a specific version of skyrim:
 
@@ -73,15 +76,3 @@ it needs to follow this naming convetion
 offsets-`<ae-or-se>`-`<game-version>`.txt
 
 Finally, you can finally run the first cell on the ipynb file to update the database used by these scripts
-
-### Adding your own addresses to the database:
-
-you can add new lines to the known-addresses.txt in this format
-
-`<function-name>`;`<se-id>`;`<ae-id>`
-
-Example:
-
-Actor_AddSpell;37771;38716
-
-Then you can run the secund cell of the build.ipynb
