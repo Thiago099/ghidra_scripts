@@ -47,7 +47,7 @@ If the selected address is in a function, it will display the id of this functio
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/a5a5a13e-7d6b-4e56-aa40-9045cf934a65)
 
-###Adding your skyrim version to the database:
+### Adding your skyrim version to the database:
 
 You can generate a dump of your specific version of skyrim by adding this code to any SKSE plugin. You can get the header file [here](https://www.nexusmods.com/skyrimspecialedition/mods/32444?tab=files)
 
