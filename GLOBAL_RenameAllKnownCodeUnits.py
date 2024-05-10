@@ -16,6 +16,7 @@ scriptName = "Rename All Known Code Units"
 
 class MyScript(GhidraScript):
     def run(self):
+        delete_existing_symbols = False
         while(True):
             version = askChoice(scriptName, "Please Select The Game Version:", versions, versions[0])
             library = AddressLibrary(version)
@@ -25,10 +26,8 @@ class MyScript(GhidraScript):
                 if tryagain:
                     continue
                 return
-            procceed = askYesNo(scriptName, "This function will lot of code units, are you sure?")
-            if not procceed:
-                return
-            
+            delete_existing_symbols = askYesNo(scriptName, "Do you want to delete existing symbols to the renamed functions?")
+
             break
         code_units_renamed = 0
         for id in library.GetAllIds():
@@ -42,13 +41,16 @@ class MyScript(GhidraScript):
                 continue
             if(code_unit is not None):
                 if("name" in data):
-                    code_units_renamed += 1
 
-                    existing_label = symbol_table.getPrimarySymbol(program_address)
-                    if existing_label is not None:
-                        symbol_table.removeSymbolSpecial(existing_label)
+                    if delete_existing_symbols:
+                        existing_label = symbol_table.getPrimarySymbol(program_address)
+                        if existing_label is not None:
+                            symbol_table.removeSymbolSpecial(existing_label)
 
                     symbol_table.createLabel(program_address, data["name"], SourceType.USER_DEFINED)
+
+                    code_units_renamed += 1
+
             else:
                 print("code unit not found at address "+address)
 

@@ -74,6 +74,9 @@ class AddressLibrary:
             return id
         return GetMatchID(self.game_version, id)
     
+    def GetIdForCurrentVersion(self, id):
+        return GetMatchID(pair[self.game_version], id)
+    
     def getGameVersion(self):
         return self.game_version
     def getExactVersion(self):
@@ -92,7 +95,8 @@ class AddressLibrary:
     def PrintAddress(self, entryPoint, offset):
         print(str(MemoryToAddressLibrary(self.version,entryPoint))+" "+hex(offset).rstrip('L'))
 
-
+    def GetGameVersion(self):
+        return self.game_version.upper()
 
     def GetMemory(self, address):
         return AddressLibraryToMemory(self.version, address).rstrip('L')
