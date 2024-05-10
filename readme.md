@@ -69,10 +69,10 @@ return true;
 }
 ```
 
-After you do that, you can put the file you generated (it will be on your skyrim root folder) in the data folder of this project
+After you do that, you can rename put the file you generated (it will be on your skyrim root folder) in the data folder of this project
 
 it needs to follow this naming convetion
 
-offsets-`<ae-or-se>`-`<game-version>`.txt
+offsets-`<ae-or-se>`-`<full-game-version>`.txt
 
 Finally, you can finally run the first cell on the ipynb file to update the database used by these scripts
