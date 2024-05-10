@@ -18,6 +18,7 @@ You will be asked if you want to delete existing symbols. It is highly suggested
 This script will return both the AE and SE address library IDs of the selected code unit, if they are in the database.
 
 Example of output
+
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/367148a6-fd27-4cde-81c6-043f54ceb682)
 
 
