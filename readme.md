@@ -12,7 +12,8 @@ You will be asked if you want to delete existing symbols. It is highly suggested
 
 This script will ask you for an address library ID, and it will bookmark the address of that ID
 
-![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/f5994d26-5ca6-4076-8b02-5cf197d3feec)
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/d7757f3b-9f59-45e9-b450-6d93e202896e)
+
 
 You can use IDs from SE on AE and vice versa for as long as they are in the database, you must answer this prompt correctly
 
