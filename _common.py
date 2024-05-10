@@ -72,8 +72,7 @@ class AddressLibrary:
         metadata = currentProgram.getMetadata()
         for key, value in metadata.items():
             if(key == "PE Property[ProductVersion]"):
-                version = re.sub(r'\.[^.]*$', '', value)
-                self.version = version
+                self.version = value
                 break
         if(self.version):
             self.game_version = offsets[self.version]["game-version"]
