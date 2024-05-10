@@ -32,7 +32,7 @@ def MemoryToAddressLibrary(version, input):
 def MemoryToAddressLibrarySilent(version, input):
     input = "0x"+str(input)[2:].lstrip('0')
     if(input not in offsets[version]["skyrim-to-address"]):
-        return 0
+        return "-1"
     return offsets[version]["skyrim-to-address"][input]
 
 def AddressLibraryToMemory(version, input):
@@ -83,6 +83,11 @@ class AddressLibrary:
     
     def GetAddressData(self, id):
         return GetAddressData(self.game_version, self.version, id)
+    def GetMemoryData(self, address):
+        id = str(MemoryToAddressLibrarySilent(self.version, str(address)))
+        if id == "-1":
+            return "-1"
+        return GetAddressData(self.game_version, self.version, id)
     
     def PrintAddress(self, entryPoint, offset):
         print(str(MemoryToAddressLibrary(self.version,entryPoint))+" "+hex(offset).rstrip('L'))
@@ -93,11 +98,13 @@ class AddressLibrary:
         return AddressLibraryToMemory(self.version, address).rstrip('L')
     
     def PrintAddressLibraryIds(self, address):
-        id = str(MemoryToAddressLibrarySilent(self.version, address))
-        if id == "0":
+        id = str(MemoryToAddressLibrarySilent(self.version, str(address)))
+        if id == "-1":
+            return False
+        pair = GetMatchID(self.game_version, id)
+        if(str(pair)=="-1"):
             return False
 
-        pair = GetMatchID(pair[self.game_version], self.version, address)
         if(self.game_version == "ae"):
             print("SE: "+str(pair))
             print("AE: "+str(id))
