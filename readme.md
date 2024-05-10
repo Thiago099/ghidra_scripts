@@ -21,6 +21,12 @@ If you however provide the right id to your game version it only needs to be on 
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/819ae529-7c4d-405e-a03f-e60946c38ba2)
 
+### SELECTION_Get Info.py
+
+This script will print basic information about the selected function
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/b510a5b1-728e-43a2-b02c-367232509534)
+
 ### SELECTION_GetAddressLibraryIds.py
 
 This script will return both the AE and SE address library IDs of the selected code unit, if they are in the database.
