@@ -4,6 +4,9 @@
 import os
 import json
 
+import re
+
+
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
 
@@ -65,9 +68,17 @@ def GetAllIds(game_version):
     return input
 
 class AddressLibrary:
-    def __init__(self, version):
-        self.version = version
-        self.game_version = offsets[version]["game-version"]
+    def __init__(self, currentProgram):
+        metadata = currentProgram.getMetadata()
+        for key, value in metadata.items():
+            if(key == "PE Property[ProductVersion]"):
+                version = re.sub(r'\.[^.]*$', '', value)
+                self.version = version
+                break
+        if(self.version):
+            self.game_version = offsets[self.version]["game-version"]
+        else:
+            print("version is not on the database, you need to generate the files")
 
     def GetCurrentVersionId(self,target_version, id):
         if(target_version == self.game_version):
