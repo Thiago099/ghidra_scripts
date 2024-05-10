@@ -23,7 +23,7 @@ class MyScript(GhidraScript):
         if(not library.IsValid()):
             return
 
-        delete_existing_symbols = askYesNo(scriptName, "Do you want to delete existing symbols to the renamed functions?")
+        delete_existing_symbols = askYesNo(scriptName, "Do you want to delete existing symbols from the renamed functions?")
         code_units_renamed = 0
         for id in library.GetAllIds():
             address = library.GetMemory(id)
