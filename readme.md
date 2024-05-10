@@ -7,15 +7,30 @@ All scripts that interact with the address library will ask for a game version; 
 
 ### RenameAllKnownFunctions.py
 
-This script will rename all known functions to the name, currently all of the RELOCATION_ID calls in commonlib
+This script will rename all known functions in the database
+
+You will be asked if you want to delete existing symbols. It is highly suggested that you say no; however, if you do so, functions that you have already renamed will not be renamed
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/051cbb55-2bd3-4688-b358-faeb0489781e)
 
 ### GetAddressLibraryIds.py
 
-This script will return both the AE and SE address library IDs of the selected code unit; if they are on the database.
+This script will return both the AE and SE address library IDs of the selected code unit, if they are in the database.
+
+Example of output
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/367148a6-fd27-4cde-81c6-043f54ceb682)
+
 
 ### Bookmark An Address.py
 
-This script will ask you for an address library ID, it will bookmark the address of that id
+This script will ask you for an address library ID, and it will bookmark the address of that ID
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/f5994d26-5ca6-4076-8b02-5cf197d3feec)
+
+You can use IDs from SE on AE for as long as they are in the database, you must answer this prompt correctly
+
+![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/819ae529-7c4d-405e-a03f-e60946c38ba2)
+
 
 ### Hook All References to this address.py
 
