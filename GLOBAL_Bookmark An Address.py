@@ -6,14 +6,17 @@
 
 from ghidra.app.script import GhidraScript
 from ghidra.util.task import ConsoleTaskMonitor
-from  _common import versions, AddressLibrary
+from  _common import AddressLibrary
 
 
 scriptName = "Bookmark address library"
 class MyScript(GhidraScript):
 	def run(self):
-		version = askChoice(scriptName, "Please Select The Game Version:", versions, versions[0])
-		library = AddressLibrary(version)
+		library = AddressLibrary(currentProgram)
+
+		if(not library.IsValid()):
+			return
+
 
 		id = askInt(scriptName, "Please enter an address library id:")
 		isEqual = askYesNo(scriptName, "Is this address for the " + library.getGameVersion() + " version of skyrim?")

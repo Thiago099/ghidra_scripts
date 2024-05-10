@@ -8,7 +8,7 @@
 
 from ghidra.program.model.symbol import SourceType
 from ghidra.app.script import GhidraScript
-from  _common import versions, AddressLibrary
+from  _common import AddressLibrary
 
 symbol_table = currentProgram.getSymbolTable()
 
@@ -17,18 +17,13 @@ scriptName = "Rename All Known Code Units"
 class MyScript(GhidraScript):
     def run(self):
         delete_existing_symbols = False
-        while(True):
-            version = askChoice(scriptName, "Please Select The Game Version:", versions, versions[0])
-            library = AddressLibrary(version)
-            procceed = askYesNo(scriptName, "Are you using skyrim "+library.getGameVersion()+" with this exact version: "+library.getExactVersion())
-            if(not procceed):
-                tryagain = askYesNo(scriptName, "Do you want to try again?")
-                if tryagain:
-                    continue
-                return
-            delete_existing_symbols = askYesNo(scriptName, "Do you want to delete existing symbols to the renamed functions?")
 
-            break
+        library = AddressLibrary(currentProgram)
+        
+        if(not library.IsValid()):
+            return
+
+        delete_existing_symbols = askYesNo(scriptName, "Do you want to delete existing symbols to the renamed functions?")
         code_units_renamed = 0
         for id in library.GetAllIds():
             address = library.GetMemory(id)

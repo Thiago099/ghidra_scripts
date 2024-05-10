@@ -19,8 +19,6 @@ with open(script_dir+'/data/definition.json') as f:
 with open(script_dir+'/data/addresses_match.json') as f:
     address_match = json.load(f)
 
-versions = list(offsets.keys())
-
 pair = {"ae":"se","se":"ae"}
 
 
@@ -70,14 +68,15 @@ def GetAllIds(game_version):
 class AddressLibrary:
     def __init__(self, currentProgram):
         metadata = currentProgram.getMetadata()
-        for key, value in metadata.items():
-            if(key == "PE Property[ProductVersion]"):
-                self.version = value
-                break
-        if(self.version):
+        self.version = metadata["PE Property[ProductVersion]"]
+        if(self.version and self.version in offsets):
             self.game_version = offsets[self.version]["game-version"]
         else:
-            print("version is not on the database, you need to generate the files")
+            self.game_version = None
+            print("version "+ self.version +" was not on the database, you need to generate the files")
+
+    def IsValid(self):
+        return self.game_version != None
 
     def GetCurrentVersionId(self,target_version, id):
         if(target_version == self.game_version):
@@ -103,7 +102,18 @@ class AddressLibrary:
         return GetAddressData(self.game_version, self.version, id)
     
     def PrintAddress(self, entryPoint, offset):
-        print(str(MemoryToAddressLibrary(self.version,entryPoint))+" "+hex(offset).rstrip('L'))
+        oid = str(MemoryToAddressLibrary(self.version,entryPoint))
+        mid = GetMatchID(self.game_version, oid)
+        if(self.game_version == "ae"):
+            print("__ ADDRESS AND OFFSET __")
+            print("AE ID: "+ oid + " AE Offset: "+hex(offset).rstrip('L'))
+            if(mid != "-1"):
+                print("SE ID: "+ mid)
+        else:
+            print("__ ADDRESS AND OFFSET __")
+            print("SE ID: "+ oid + " SE Offset: "+hex(offset).rstrip('L'))
+            if(mid != "-1"):
+                print("AE ID: "+ mid)
 
     def GetGameVersion(self):
         return self.game_version.upper()

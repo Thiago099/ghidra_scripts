@@ -13,6 +13,10 @@ scriptName = "Get Info"
 class MyScript(GhidraScript):
 	def run(self):
 		library = AddressLibrary(currentProgram)
+
+		if(not library.IsValid()):
+			return
+		
 		data = library.GetMemoryData(currentAddress)
 		if data == "-1":
 			try:

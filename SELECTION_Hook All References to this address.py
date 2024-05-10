@@ -5,14 +5,18 @@
 #@toolbar 
 from ghidra.app.script import GhidraScript
 
-from  _common import versions, AddressLibrary
+from  _common import AddressLibrary
 
 scriptName = "Hook All References to this function"
 
 
 class MyScript(GhidraScript):
 	def run(self):
-		library = AddressLibrary(askChoice(scriptName, "Please Select The Game Version:", versions, versions[0]))
+		
+		library = AddressLibrary(currentProgram)
+
+		if(not library.IsValid()):
+			return
 
 
 		refs = currentProgram.referenceManager.getReferencesTo(currentAddress)
