@@ -3,8 +3,7 @@ For the scripts to work, the address library offsets must be in the database, if
 
 ### GLOBAL_RenameAllKnownFunctions.py
 
-This script will rename all known functions in the database
-
+This script will rename all known functions that are in the definition database
 You will be asked if you want to delete existing symbols. It is highly suggested that you say no; however, if you do so, functions that you have already renamed will not be renamed
 
 ![image](https://github.com/Thiago099/ghidra_scripts/assets/66787043/051cbb55-2bd3-4688-b358-faeb0489781e)
