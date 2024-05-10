@@ -81,4 +81,4 @@ it needs to follow this naming convetion
 
 offsets-`<ae-or-se>`-`<full-game-version>`.txt
 
-Finally, you can finally run the first cell on the ipynb file to update the database used by these scripts
+Finally, you can run the first cell on the ipynb file to update the database used by these scripts
